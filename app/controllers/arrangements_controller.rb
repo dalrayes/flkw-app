@@ -4,7 +4,7 @@ class ArrangementsController < ApplicationController
 	end
 
 	def show
-    @arrangements = arrangement.find(params[:id])
+    @arrangements = Arrangement.find(params[:id])
   end
 
   private

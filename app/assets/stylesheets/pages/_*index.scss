@@ -1,4 +1,11 @@
+// @import 'active_admin';
 @import "landing";
 @import "arrangements";
 @import "contacts";
-@import 'active_admin';
+
+/* Page Styles
+==============================*/
+
+body {
+    font-family: $main-font;
+}
