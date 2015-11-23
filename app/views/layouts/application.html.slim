@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Fleur Flowers & Gifts
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js"
+    = javascript_include_tag "application"
+  body
+    header.main-header
+      =link_to '/', class: "site-logo"
+        img src= '/assets/fleur_logo_transparent'
+
+      ul.nav
+        li: a href= "/flowers" FLOWERS
+        li: a href= "#" OCCASIONS
+        li: a href= "#" GIFTS
+        li: a href= "#" BAKERY
+        li: a href= "/contacts" CONTACT
+
+    == yield
+
+  footer
+    p#copyright &copy; #{Date.today.year} Fleur Flowers & Gifts

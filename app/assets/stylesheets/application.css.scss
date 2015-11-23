@@ -1,0 +1,32 @@
+/*******************************
+  Third Party Libs
+    - Normalize
+    - Bourbon
+    - Neat
+    - Fontawesome
+    - Google Fonts
+  Support
+    - mixins
+  Settings
+    - variables
+    - layout
+  Global
+    - base styles
+ **/
+@import 'config/*index';
+
+
+/*******************************
+  Shared
+    - navigation
+ **/
+@import 'components/*index';
+
+
+/*******************************
+  Pages
+    - Home
+    - Flowers
+    - Contacts
+ **/
+@import 'pages/*index';

@@ -1,0 +1,22 @@
+/* Global
+==========================*/
+
+#main {
+  @include outer-container(90%);
+}
+
+#top {
+  @include span-columns(12);
+}
+
+#middle {
+  @include span-columns(12);
+}
+
+/* Page Styles
+==============================*/
+
+body {
+  font-family: $main-font;
+  margin: 0 auto;
+}

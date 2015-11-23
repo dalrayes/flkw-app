@@ -1,0 +1,28 @@
+#map_1, #map_2 {
+  height: 300px;
+}
+
+#map_1, #map_2, .location {
+  @include span-columns(5);
+
+  @include omega(4n);
+
+  margin-bottom: 3vw;
+
+  @include media($tablet) {
+    @include span-columns(3);
+
+    @include omega(2n);
+  }
+
+
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+}
+
+.address {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2px;
+}

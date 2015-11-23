@@ -1,0 +1,123 @@
+//Index Page
+.gallery {}
+
+#item {
+  @include span-columns(3);
+
+  @include omega(4n);
+
+  margin-bottom: 2vw;
+
+  @include media($tablet) {
+    @include span-columns(3);
+
+    @include omega(2n);
+  }
+
+
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+
+
+  .item-image {
+    width: 100%;
+    display: block;
+
+    &:hover {
+      opacity: 0.4;
+      filter: alpha(opacity = 40);
+
+      /* For IE8 and earlier */
+    }
+  }
+
+  .caption {
+    margin-bottom: .2em;
+
+    #{$a-tags} {
+      color: $primary-text-color;
+      text-decoration: none;
+    }
+  }
+
+  .details {
+    color: $primary-text-color;
+    margin: 0;
+    font-family: $detail-font;
+  }
+}
+
+//Show Page
+
+#individual_item_image {
+  @include span-columns(4);
+
+  @include media($tablet) {
+    @include span-columns(3);
+
+    @include omega(2n);
+
+    @include shift(1);
+  }
+
+
+  @include media($mobile) {
+    @include span-columns(3);
+  }
+
+
+  .item-image {
+    width: 100%;
+    display: block;
+  }
+}
+
+#individual_item_details {
+  @include span-columns(8);
+
+  color: $primary-text-color;
+
+  @include media($tablet) {
+    @include span-columns(3);
+
+    @include omega(2n);
+
+    @include shift(1);
+  }
+
+
+  @include media($mobile) {
+    @include span-columns(3);
+  }
+}
+
+// Lightbox
+
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+
+  @include position(fixed, 0 null null 0);
+
+  display: none;
+  text-align: center;
+
+  img {
+    margin-top: 10%;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+.close-button {
+  i {
+    color: $primary-text-color;
+    text-decoration: none;
+
+    @include position(absolute, 1.5em null null null);
+  }
+}
