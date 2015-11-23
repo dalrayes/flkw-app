@@ -10,6 +10,7 @@ class CreateArrangements < ActiveRecord::Migration
       t.string :description
       t.string :visibility
       t.string :container_type
+      t.attachment :image
 
       t.timestamps null: false
     end
