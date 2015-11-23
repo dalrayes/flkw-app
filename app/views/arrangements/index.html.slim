@@ -1,0 +1,16 @@
+#main
+  #top
+    h2 Flowers
+  #middle
+    .gallery
+      - @arrangements.each do |arrangement|
+        #item
+          - if arrangement.image?
+              = link_to image_tag(arrangement.image.url, class:'item-image', alt: arrangement.name), arrangement_path(arrangement)
+
+          - else
+              img src="http://placehold.it/400x400"
+
+          h4.caption = link_to arrangement.name.upcase, arrangement_path(arrangement)
+          h5.details = number_to_currency(arrangement.price, unit: "KWD ", precision: 3)
+          h5.details = arrangement.description

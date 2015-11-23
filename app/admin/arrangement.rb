@@ -2,8 +2,8 @@ ActiveAdmin.register Arrangement do
 
   index do
     column :name
-    column :available?
-    column 'Show on site?', :visible?
+    column :availability
+    column 'Show on site?', :visibility
     column :price, :sortable => :price do |bouquet|
       number_to_currency(bouquet.price,unit: "KWD ")
     end
@@ -22,8 +22,8 @@ ActiveAdmin.register Arrangement do
       row :height
       row :container_type
       row :description
-      row :available?
-      row :visible?
+      row :availability
+      row :visibility
       active_admin_comments
     end
   end
@@ -37,8 +37,8 @@ ActiveAdmin.register Arrangement do
       f.input :height
       f.input :container_type
       f.input :description
-      f.input :available?
-      f.input :visible?
+      f.input :availability
+      f.input :visibility
       f.input :image, hint: f.flower.image? ? image_tag(f.flower.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
     end
     f.actions
@@ -47,10 +47,10 @@ ActiveAdmin.register Arrangement do
   filter :name
   filter :width
   filter :height
-  filter :available?
-  filter :visible?
+  filter :availability
+  filter :visibility
   filter :price
 
-  permit_params :name, :category_id, :item_number, :price, :available?, :width, :height, :description, :visible?, :container_type, :image
+  permit_params :name, :category_id, :item_number, :price, :availability, :width, :height, :description, :visibility, :container_type, :image
 
 end

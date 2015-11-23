@@ -2,7 +2,7 @@ class CreateArrangements < ActiveRecord::Migration
   def change
      create_table :arrangements do |t|
       t.string :name
-      t.integer :item_number
+      t.string :item_number
       t.float :price
       t.string :availability
       t.string :width
@@ -10,7 +10,6 @@ class CreateArrangements < ActiveRecord::Migration
       t.string :description
       t.string :visibility
       t.string :container_type
-      t.attachment :image
 
       t.timestamps null: false
     end
