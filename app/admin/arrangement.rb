@@ -21,6 +21,9 @@ ActiveAdmin.register Arrangement do
       end
       row :name
       row :item_number
+      row :flowers do |arrangement|
+        arrangement.flowers.map(&:flower_type).join(', ')
+      end
       row :price
       row :width
       row :height
