@@ -31,5 +31,11 @@ Flower.create!(flower_type:'hydrangea')
 Flower.create!(flower_type:'orchid')
 
 
+Arrangement.all.each do |arr|
+	ArrangementFlower.create!(arrangement: arr, flower: Flower.find(rand(1..4)))
+end
+
+
+
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 

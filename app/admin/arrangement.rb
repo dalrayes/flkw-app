@@ -2,6 +2,10 @@ ActiveAdmin.register Arrangement do
 
   index do
     column :name
+    column "Flowers" do |arrangement|
+      arrangement.flowers.map(&:flower_type).join(', ')
+    end
+
     column :availability
     column 'Show on site?', :visibility
     column :price, :sortable => :price do |bouquet|
