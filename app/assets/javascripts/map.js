@@ -1,9 +1,9 @@
 function initialize() {
       var mapCanvas = document.getElementById('map_1');
-      var myLatLng = new google.maps.LatLng(29.307167010924164,47.97342447750104);
+      var myLatLng = new google.maps.LatLng(29.3071955,47.973729);
       var mapOptions = {
           center: myLatLng,
-          zoom: 17,
+          zoom: 19,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel: false
       }
@@ -25,10 +25,10 @@ function initialize() {
 
 //second location map
     var mapCanvas_2 = document.getElementById('map_2');
-      var myLatLng_2 = new google.maps.LatLng(29.329188, 47.970076);
+      var myLatLng_2 = new google.maps.LatLng(29.3283409, 47.9700726);
       var mapOptions_2 = {
           center: myLatLng_2,
-          zoom: 17,
+          zoom: 18,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel: false
       }
