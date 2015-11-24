@@ -5,8 +5,8 @@
   #middle
     h2.heading =link_to('Follow us on Instagram @fleurkw', 'https://instagram.com/fleurkw/', target: "_blank")
     .instagallery
-        / - @recent_pics.each do |pic|
+        - Instagram.user_recent_media("24689190", {count: 4}).each do |pic|
          figure.instaitem
-          / = link_to image_tag(pic.images.standard_resolution.url, class: 'insta-image', alt: pic.caption.text), pic.link
+          = link_to image_tag(pic.images.standard_resolution.url, class: 'insta-image', alt: pic.caption.text), pic.link
           figcaption
             = link_to pic.caption.text, pic.link, target: "_blank"
