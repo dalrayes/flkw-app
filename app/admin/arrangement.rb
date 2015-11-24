@@ -1,7 +1,11 @@
 ActiveAdmin.register Arrangement do
 
+
   index do
-    column :name
+    column :name do |arrangement|
+      link_to arrangement.name, admin_arrangement_path(arrangement)
+    end
+
     column "Flowers" do |arrangement|
       arrangement.flowers.map(&:flower_type).join(', ')
     end
@@ -42,11 +46,11 @@ ActiveAdmin.register Arrangement do
       f.input :price
       f.input :width
       f.input :height
-      f.input :container_type
+      f.input :container_type, as: :radio, :collection => ["vase", "box"]
       f.input :description
-      f.input :availability
-      f.input :visibility
-      f.input :image, hint: f.flower.image? ? image_tag(f.flower.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
+      f.input :availability, as: :radio, collection: ["available", "not_available"]
+      f.input :visibility, as: :radio, collection:  ["visible", "not_visible"]
+      f.input :image, hint: f.arrangement.image? ? image_tag(f.arrangement.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
     end
     f.actions
   end
