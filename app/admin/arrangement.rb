@@ -40,13 +40,15 @@ ActiveAdmin.register Arrangement do
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|
-    f.inputs "Bouquet Details" do
+    f.inputs "Arrangement Details" do
       f.input :name
       f.input :item_number
       f.input :price
       f.input :width
       f.input :height
       f.input :container_type, as: :radio, :collection => ["vase", "box"]
+      f.input :flowers, for: :arrangement_flowers
+
       f.input :description
       f.input :availability, as: :radio, collection: ["available", "not_available"]
       f.input :visibility, as: :radio, collection:  ["visible", "not_visible"]
@@ -62,6 +64,7 @@ ActiveAdmin.register Arrangement do
   filter :visibility
   filter :price
 
-  permit_params :name, :category_id, :item_number, :price, :availability, :width, :height, :description, :visibility, :container_type, :image
+  permit_params :name, :category_id, :item_number, :price, :availability, :width, :height, :description, :visibility, :container_type, :image, 
+    arrangement_flower_attributes: [:id, :arrangement_id, :flower_id]
 
 end

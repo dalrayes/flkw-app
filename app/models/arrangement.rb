@@ -6,7 +6,7 @@ class Arrangement < ActiveRecord::Base
   validates :visibility, inclusion: {in: %w(visible not_visible)}
   validates :container_type, inclusion: {in: %w(vase box)}
   validates :name, :item_number, :price, :availability, :width, :height, :description, :visibility, :container_type, presence: true
-  accepts_nested_attributes_for :arrangement_flowers
+  accepts_nested_attributes_for :arrangement_flowers, allow_destroy: true
 
   has_attached_file :image, styles: {medium: ["100x100>", :jpg]}
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/gif", "image/png"]

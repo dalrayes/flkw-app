@@ -10,6 +10,6 @@ class ArrangementsController < ApplicationController
   private
 
   def arrangement_params
-    params.require(:arrangement).permit(:name, :item_number, :price, :availability, :width, :height, :description, :visibility, :container_type, :image)
+    params.require(:arrangement).permit(:name, :item_number, :price, :availability, :width, :height, :description, :visibility, :container_type, :image, :flower_ids)
   end
 end
