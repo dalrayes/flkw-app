@@ -14,8 +14,8 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Arrangements" do
           table_for Arrangement.order("updated_at desc").limit(5) do
-            column :name do |arr|
-              link_to arr.name, admin_arrangements_path(arr)
+            column :name do |arrangement|
+              link_to arrangement.name, admin_arrangement_path(arrangement)
             end
             column :updated_at
           end
