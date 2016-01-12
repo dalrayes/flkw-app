@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 #data
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
